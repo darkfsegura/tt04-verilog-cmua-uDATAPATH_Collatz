@@ -69,7 +69,6 @@ wire		BB_SYSTEM_CLOCK_50 = clk;
 wire		BB_SYSTEM_RESET_InHigh = rst_n;
 wire		[DATAWIDTH_BUS-1:0] BB_SYSTEM_data_InBUS;
 assign		BB_SYSTEM_data_InBUS = ui_in[7:0];
-// wire 		BB_SYSTEM_CLOCK_50;
 
 // BB_SYSTEM_CLOCK_50 = clk;
 

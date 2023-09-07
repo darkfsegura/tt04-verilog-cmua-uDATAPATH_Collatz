@@ -61,7 +61,7 @@ input 	[DATAWIDTH_ALU_SELECTION-1:0]	uDATAPATH_aluselection_InBUS;
 input	uDATAPATH_regSHIFTERclear_InLow;
 input 	uDATAPATH_regSHIFTERload_InLow;
 input 	[1:0] uDATAPATH_regSHIFTERshiftselection_InLow;
-input 	[DATAWIDTH_BUS-3:0] uDATAPATH_BB_SYSTEM_data_InBUS;
+input 	[DATAWIDTH_BUS-1:0] uDATAPATH_BB_SYSTEM_data_InBUS;
 //=======================================================
 //  REG/WIRE declarations
 //=======================================================

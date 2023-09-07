@@ -51,7 +51,7 @@ always @ (*)
 // REGISTER : SEQUENTIAL
 always @ ( posedge SC_RegFIXED_CLOCK_50 , posedge SC_RegFIXED_RESET_InHigh)
 	if (SC_RegFIXED_RESET_InHigh==1)
-		RegFIXED_Register <= {SC_RegFIXED_data_InBUS};
+		RegFIXED_Register <= SC_RegFIXED_data_InBUS;
 	else
 		RegFIXED_Register <= RegFIXED_Signal;
 //=======================================================
