@@ -43,14 +43,16 @@ documentation:
 
 # A description of what the inputs do (e.g. red button, SPI CLK, SPI MOSI, etc).
   inputs:               
-    - BB_SYSTEM_CLOCK_50
-    - BB_SYSTEM_RESET_InHigh
+    - clk
+    - rst_n
     - BB_SYSTEM_data_InBUS[0]
     - BB_SYSTEM_data_InBUS[1]
     - BB_SYSTEM_data_InBUS[2]
     - BB_SYSTEM_data_InBUS[3]
     - BB_SYSTEM_data_InBUS[4]
     - BB_SYSTEM_data_InBUS[5]
+    - BB_SYSTEM_data_InBUS[6]
+    - BB_SYSTEM_data_InBUS[7]
 # A description of what the outputs do (e.g. status LED, SPI MISO, etc)
   outputs:
     - BB_SYSTEM_data_OutBUS[7]
