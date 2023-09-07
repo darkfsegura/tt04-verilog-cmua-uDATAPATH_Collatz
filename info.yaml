@@ -55,14 +55,14 @@ documentation:
     - BB_SYSTEM_data_InBUS[7]
 # A description of what the outputs do (e.g. status LED, SPI MISO, etc)
   outputs:
-    - BB_SYSTEM_data_OutBUS[7]
-    - BB_SYSTEM_data_OutBUS[6]
-    - BB_SYSTEM_data_OutBUS[5]
-    - BB_SYSTEM_data_OutBUS[4]
-    - BB_SYSTEM_data_OutBUS[3]
-    - BB_SYSTEM_data_OutBUS[2]
-    - BB_SYSTEM_data_OutBUS[1]
     - BB_SYSTEM_data_OutBUS[0]
+    - BB_SYSTEM_data_OutBUS[1]
+    - BB_SYSTEM_data_OutBUS[2]
+    - BB_SYSTEM_data_OutBUS[3]
+    - BB_SYSTEM_data_OutBUS[4]
+    - BB_SYSTEM_data_OutBUS[5]
+    - BB_SYSTEM_data_OutBUS[6]
+    - BB_SYSTEM_data_OutBUS[7]
 
 # A description of what the bidirectional I/O pins do (e.g. I2C SDA, I2C SCL, etc)
   bidirectional:
