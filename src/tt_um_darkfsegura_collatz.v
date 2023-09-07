@@ -20,8 +20,17 @@
 //=======================================================
 
 module tt_um_darkfsegura_collatz (
-  input [7:0] io_in,
-  output [7:0] io_out
+    input  wire [7:0] ui_in,    // Dedicated inputs - connected to the input switches
+    output wire [7:0] uo_out,   // Dedicated outputs - connected to the 7 segment display
+    input  wire [7:0] uio_in,   // IOs: Bidirectional Input path
+    output wire [7:0] uio_out,  // IOs: Bidirectional Output path
+    output wire [7:0] uio_oe,   // IOs: Bidirectional Enable path (active high: 0=input, 1=output)
+    input  wire       ena,      // will go high when the design is enabled
+    input  wire       clk,      // clock
+    input  wire       rst_n     // reset_n - low to reset
+
+//  input [7:0] io_in,
+//  output [7:0] io_out
 );
 
 
@@ -55,11 +64,14 @@ parameter DATA_REGFIXED_INIT_1 = 8'b00000000;
 //  PORT declarations
 //=======================================================
 wire		[DATAWIDTH_BUS-1:0]	BB_SYSTEM_data_OutBUS;
-assign 		io_out[7:0] = BB_SYSTEM_data_OutBUS;
-wire		BB_SYSTEM_CLOCK_50 = io_in[0];
-wire		BB_SYSTEM_RESET_InHigh = io_in[1];
-wire		[DATAWIDTH_BUS-3:0] BB_SYSTEM_data_InBUS;
-assign		BB_SYSTEM_data_InBUS = io_in[7:2];
+assign 		uo_out[7:0] = BB_SYSTEM_data_OutBUS;
+wire		BB_SYSTEM_CLOCK_50 = clk;
+wire		BB_SYSTEM_RESET_InHigh = rst_n;
+wire		[DATAWIDTH_BUS-1:0] BB_SYSTEM_data_InBUS;
+assign		BB_SYSTEM_data_InBUS = ui_in[7:0];
+// wire 		BB_SYSTEM_CLOCK_50;
+
+// BB_SYSTEM_CLOCK_50 = clk;
 
 
 //output	[DATAWIDTH_BUS-1:0] BB_SYSTEM_data_OutBUS;

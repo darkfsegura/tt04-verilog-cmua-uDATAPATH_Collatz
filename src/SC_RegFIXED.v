@@ -36,7 +36,7 @@ module SC_RegFIXED #(parameter DATAWIDTH_BUS=8, parameter DATA_REGFIXED_INIT=8'b
 output reg		[DATAWIDTH_BUS-1:0] SC_RegFIXED_data_OutBUS;
 input			SC_RegFIXED_CLOCK_50;
 input			SC_RegFIXED_RESET_InHigh;
-input 			[DATAWIDTH_BUS-3:0] SC_RegFIXED_data_InBUS;
+input 			[DATAWIDTH_BUS-1:0] SC_RegFIXED_data_InBUS;
 //=======================================================
 //  REG/WIRE declarations
 //=======================================================
@@ -51,7 +51,7 @@ always @ (*)
 // REGISTER : SEQUENTIAL
 always @ ( posedge SC_RegFIXED_CLOCK_50 , posedge SC_RegFIXED_RESET_InHigh)
 	if (SC_RegFIXED_RESET_InHigh==1)
-		RegFIXED_Register <= {2'b00,SC_RegFIXED_data_InBUS};
+		RegFIXED_Register <= {SC_RegFIXED_data_InBUS};
 	else
 		RegFIXED_Register <= RegFIXED_Signal;
 //=======================================================
