@@ -5,9 +5,16 @@ project:
 
 # If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. 
 # Source files must be in ./src and you must list each source file separately
-#  source_files:        
-#    - counter.v
-#    - decoder.v
+  source_files:        
+    - tt_um_darkfsegura_collatz.v
+    - CC_ALU.v
+    - CC_DECODER.v
+    - CC_MUXX.v
+    - SC_RegFIXED.v
+    - SC_RegGENERAL.v
+    - SC_RegSHIFTER.v
+    - SC_STATEMACHINE.v
+    - uDATAPATH.v
 #  top_module:  "tt_um_example"      # Put the name of your top module here, must start with "tt_um_". Make it unique by including your github username
 
 # How many tiles your design occupies? A single tile is about 167x108 uM.
@@ -21,10 +28,10 @@ yaml_version: 4
 #
 # Here is a great example: https://github.com/davidsiaw/tt02-davidsiaw-stackcalc/blob/38c5647f83aad2aec675d566aa3d67b98f0aac81/info.yaml
 documentation: 
-  author:       ""      # Your name
-  title:        ""      # Project title
-  language:     "Wokwi" # other examples include Verilog, Amaranth, VHDL, etc
-  description:  ""      # Short description of what your project does
+  author:       "CMUA F.Segura-Quijano, J.S.Moya"      # Your name
+  title:        "uDATAPATH_Collatz"      # Project title
+  language:     "Verilog" # other examples include Verilog, Amaranth, VHDL, etc
+  description:  "uDATAPATH_Collatz"      # Short description of what your project does
 
 # Longer description of how the project works. You can use standard markdown format.
   how_it_works: |
@@ -36,24 +43,25 @@ documentation:
 
 # A description of what the inputs do (e.g. red button, SPI CLK, SPI MOSI, etc).
   inputs:               
-    - none
-    - none
-    - none
-    - none
-    - none
-    - none
-    - none
-    - none
+    - BB_SYSTEM_CLOCK_50
+    - BB_SYSTEM_RESET_InHigh
+    - BB_SYSTEM_data_InBUS[0]
+    - BB_SYSTEM_data_InBUS[1]
+    - BB_SYSTEM_data_InBUS[2]
+    - BB_SYSTEM_data_InBUS[3]
+    - BB_SYSTEM_data_InBUS[4]
+    - BB_SYSTEM_data_InBUS[5]
 # A description of what the outputs do (e.g. status LED, SPI MISO, etc)
   outputs:
-    - segment a
-    - segment b
-    - segment c
-    - segment d
-    - segment e
-    - segment f
-    - segment g
-    - dot
+    - BB_SYSTEM_data_OutBUS[7]
+    - BB_SYSTEM_data_OutBUS[6]
+    - BB_SYSTEM_data_OutBUS[5]
+    - BB_SYSTEM_data_OutBUS[4]
+    - BB_SYSTEM_data_OutBUS[3]
+    - BB_SYSTEM_data_OutBUS[2]
+    - BB_SYSTEM_data_OutBUS[1]
+    - BB_SYSTEM_data_OutBUS[0]
+
 # A description of what the bidirectional I/O pins do (e.g. I2C SDA, I2C SCL, etc)
   bidirectional:
     - none
