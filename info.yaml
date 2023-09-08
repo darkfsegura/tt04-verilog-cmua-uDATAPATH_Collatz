@@ -35,11 +35,11 @@ documentation:
 
 # Longer description of how the project works. You can use standard markdown format.
   how_it_works: |
-      Explain how your project works
+      Our uDATAPATH_Collatz is a component that computes the Collatz Array Sequence for a given input number. The input and output are 8-bit vectors (data bus). The component is synchronous and has a reset signal to read the input data and perform the series calculation. The component implementation is based on a 4-register Datapath and ALU such that the implementation emulates basic assembler instructions programmed in a simple state machine. 
 
 # Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
   how_to_test:  |
-      Explain how to test your project
+      To test the component, you must put a data on the input bus BB_SYSTEM_data_InBUS[7:0], activate the Reset signal. In the output bus BB_SYSTEM_data_OutBUS[7:0] you can see the calculated string. * The series will be calculated close to the clock rate. Visually you will not be able to see the intermediate data unless you use a probe reading per digital channel from an oscilloscope.
 
 # A description of what the inputs do (e.g. red button, SPI CLK, SPI MOSI, etc).
   inputs:               
